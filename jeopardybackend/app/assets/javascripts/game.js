@@ -34,7 +34,7 @@ if($("body").hasClass("games-show")) {
 
   var userData = {
     username: username,
-    avatarUrl: avatars[getRandomInt(0,avatars.length)],
+    avatarUrl: avatars[getRandomInt(0,(avatars.length - 1))],
     points: 0
   }
 
@@ -142,8 +142,20 @@ if($("body").hasClass("games-show")) {
   // Popover Question View (clue where, state is active)
   var showClue = React.createClass({
     render: function() {
-      return React.createElement("div", {className: "show-question"},
+      return React.createElement("div", {className: "show-question", onClick: this.buzzIn},
         React.createElement("p", {className: "question-text"}, this.props.clue.questionText.toUpperCase())
+      )
+    },
+
+    buzzIn: function() {
+      gameStateRef.child("/buzzed_in_user").set(userData);
+    }
+  })
+
+  var showBuzzedInUser = React.createClass({
+    render: function() {
+      return React.createElement("div", {className: "show-player"},
+        React.createElement("p", {className: "player-name"}, this.props.userData.username)
       )
     }
   })
@@ -154,7 +166,8 @@ if($("body").hasClass("games-show")) {
       return {
         gameState: {
           board: {},
-          connected_players: []
+          connected_players: [],
+          buzzed_in_user: {}
         }
       }
     },
@@ -167,13 +180,15 @@ if($("body").hasClass("games-show")) {
     },
 
     render: function() {
-      // console.log(this.state.gameState.connected_players);
-
       var currentClues = _.filter(this.state.gameState.board, function(value, key) {
         return value.status == "current"
       });
 
       var currentClue = _.isEmpty(currentClues) ? null : _.first(currentClues);
+
+      if (this.state.gameState.buzzed_in_user) {
+        return React.createElement(showBuzzedInUser, {userData: this.state.gameState.buzzed_in_user})
+      }
 
       if (currentClue) {
         return React.createElement(showClue, {clue: currentClue})

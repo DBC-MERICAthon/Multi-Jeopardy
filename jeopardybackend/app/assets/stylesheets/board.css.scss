@@ -19,6 +19,25 @@ $jeopardy-blue: #060CE9;
 
 }
 
+div.show-player {
+  background-color: red;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 8rem;
+
+  .player-name {
+    font-family: "Korinna Bold";
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    text-shadow: 4px 4px 3px #000;
+  }
+}
+
 div.show-question {
   min-height: 100%;
   display: flex;

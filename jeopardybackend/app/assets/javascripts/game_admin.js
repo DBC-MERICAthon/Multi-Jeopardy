@@ -41,10 +41,12 @@ if($("body").hasClass("games-admin")) {
       gameStateRef.child("/board/" + this.props.clue_ident).set({
         answerText: this.props.clue.answerText,
         pointValue: this.props.clue.pointValue,
+        ident: this.props.clue.ident,
         questionText: this.props.clue.questionText,
         status: "current"
       })
     }
+
   });
 
   // Board
@@ -121,13 +123,42 @@ if($("body").hasClass("games-admin")) {
     }
   })
 
+  var showBuzzedInUser = React.createClass({
+    render: function() {
+      return React.createElement("div", {className: "show-question"},
+        React.createElement("p", {className: "question-text"}, this.props.clue.questionText.toUpperCase()),
+        React.createElement("p", {className: "answer-text"}, this.props.clue.answerText),
+        React.createElement("div", {className: "action-list"},
+          React.createElement("button", {className: "ui button green", onClick: this.acceptAnswer}, "ACCEPT"),
+          React.createElement("button", {className: "ui button primary", onClick: this.rejectAnswer}, "REJECT")
+        )
+      )
+    },
+
+    acceptAnswer: function() {
+      gameStateRef.child("/board/" + this.props.clue.ident).set({
+        answerText: this.props.clue.answerText,
+        pointValue: this.props.clue.pointValue,
+        ident: this.props.clue.ident,
+        questionText: this.props.clue.questionText,
+        status: "answered"
+      })
+      gameStateRef.child("/buzzed_in_user").set({})
+    },
+
+    rejectAnswer: function() {
+      gameStateRef.child("/buzzed_in_user").set({})
+    }
+  })
+
   // Game
   var game = React.createClass({
     getInitialState: function() {
       return {
         gameState: {
           board: {},
-          connected_players: []
+          connected_players: [],
+          buzzed_in_user: {}
         }
       }
     },
@@ -145,6 +176,10 @@ if($("body").hasClass("games-admin")) {
       });
 
       var currentClue = _.isEmpty(currentClues) ? null : _.first(currentClues);
+
+      if (this.state.gameState.buzzed_in_user && currentClue) {
+        return React.createElement(showBuzzedInUser, {userData: this.state.gameState.buzzed_in_user, clue: currentClue})
+      }
 
       if (currentClue) {
         return React.createElement(showClue, {clue: currentClue})
