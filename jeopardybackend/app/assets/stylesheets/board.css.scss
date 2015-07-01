@@ -1,0 +1,44 @@
+table {
+ background-color: black;
+ font-family: arial;
+ text-align: center;
+ font-size: 1em;
+ test-transform: uppercase;
+ border: 5px solid black
+}
+
+td {
+border: 2px solid black;
+}
+
+td {
+ border-radius: 7px;
+ letter-spacing: 1px;
+ text-shadow:
+ -0.40px -0.40px 0 #000,
+ 0.40px -0.40px 0 #000,
+ -0.40px 0.40px 0 #000,
+ 0.40px 0.40px 0 #000;
+}
+
+thead {
+ color: white;
+ background-color: blue;
+}
+
+tbody {
+ color: gold;
+ background-color: blue
+}
+
+th {
+ border-radius: 10px;
+ border: 2px solid black;
+ font-size: 1.2em;
+ text-shadow:
+ -0.5px -0.5px 0 #000,
+ 0.5px -0.5px 0 #000,
+ -0.5px 0.5px 0 #000,
+ 0.5px 0.5px 0 #000;
+
+}

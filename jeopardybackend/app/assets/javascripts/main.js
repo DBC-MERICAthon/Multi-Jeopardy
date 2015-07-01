@@ -1,7 +1,14 @@
 var firebaseClient = new Firebase("https://dbc-jeopardy.firebaseio.com/");
 var connected_players = new Firebase("https://dbc-jeopardy.firebaseio.com/connected_players");
 
-username = prompt("What's your username");
+username = ""
+
+if(localStorage.getItem("username")) {
+  username = localStorage.getItem("username");
+} else {
+  username = prompt("What's your username");
+  localStorage.setItem("username", username);
+}
 
 var userData = {
   username: username
