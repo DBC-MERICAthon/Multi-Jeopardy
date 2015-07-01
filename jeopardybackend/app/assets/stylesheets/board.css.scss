@@ -45,6 +45,7 @@ div.show-question {
   align-items: center;
   flex-direction: column;
   padding: 8rem;
+  cursor: pointer;
 
   .question-text {
     font-family: "Korinna Bold";
@@ -162,4 +163,3 @@ td {
   }
 
 }
-
