@@ -91,6 +91,13 @@ if($("body").hasClass("games-show")) {
   // Connected Users Section
 
   // Popover Question View (clue where, state is active)
+  var showClue = React.createClass({
+    render: function() {
+      return React.createElement("div", {className: "show-question"},
+        React.createElement("p", {className: "question-text"}, this.props.clue.questionText.toUpperCase())
+      )
+    }
+  })
 
   // Game
   var game = React.createClass({
@@ -110,15 +117,19 @@ if($("body").hasClass("games-show")) {
     },
 
     render: function() {
-      return React.DOM.div({},
-          React.createElement(board, {board: this.state.gameState.board})
-      )
+      var currentClues = _.filter(this.state.gameState.board, function(value, key) {
+        return value.status == "current"
+      });
 
-      // var currentClues = _.filter(this.state.gameState.board, function(value, key) {
-      //   return value.status == "current"
-      // });
+      var currentClue = _.isEmpty(currentClues) ? null : _.first(currentClues);
 
-      // var currentClue = _.isEmpty(currentClues) ? null : _.first(currentClues);
+      if (currentClue) {
+        return React.createElement(showClue, {clue: currentClue})
+      } else {
+        return React.DOM.div({},
+            React.createElement(board, {board: this.state.gameState.board})
+        )
+      }
     },
 
     setGameState: function(gameState) {
