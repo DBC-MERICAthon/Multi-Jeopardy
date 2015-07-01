@@ -14,31 +14,42 @@
   <tbody>
     <tr>
         <% @single_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 200).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 200).first.question %></td> -->
+          <td class="clue-value">$200</td>
         <% end %>
     </tr>
     <tr>
         <% @single_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 400).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 400).first.question %></td> -->
+          <td class="clue-value">$400</td>
         <% end %>
     </tr>
     <tr>
         <% @single_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 600).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 600).first.question %></td> -->
+          <td class="clue-value">$600</td>
         <% end %>
     </tr>
     <tr>
         <% @single_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 800).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 800).first.question %></td> -->
+          <td class="clue-value">$800</td>
         <% end %>
     </tr>
     <tr>
         <% @single_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 1000).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 1000).first.question %></td> -->
+          <td class="clue-value">$1000</td>
         <% end %>
     </tr>
   </tbody>
 </table>
+
+<br />
+<br />
+<br />
+<br />
+<br />
 
 <table class="ui celled striped table">
 
@@ -53,27 +64,32 @@
   <tbody>
     <tr>
         <% @double_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 400).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 400).first.question %></td> -->
+          <td class="clue-value">$400</td>
         <% end %>
     </tr>
     <tr>
         <% @double_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 800).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 800).first.question %></td> -->
+          <td class="clue-value">$800</td>
         <% end %>
     </tr>
     <tr>
         <% @double_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 1200).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 1200).first.question %></td> -->
+          <td class="clue-value">$1200</td>
         <% end %>
     </tr>
     <tr>
         <% @double_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 1600).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 1600).first.question %></td> -->
+          <td class="clue-value">$1600</td>
         <% end %>
     </tr>
     <tr>
         <% @double_jeopardy_clue_groups.each do |clue_group| %>
-          <td><%= clue_group.clues.where(point_value: 2000).first.question %></td>
+          <!-- <td><%= clue_group.clues.where(point_value: 2000).first.question %></td> -->
+          <td class="clue-value">$2000</td>
         <% end %>
     </tr>
   </tbody>

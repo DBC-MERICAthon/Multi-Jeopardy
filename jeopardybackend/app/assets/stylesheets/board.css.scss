@@ -7,13 +7,17 @@ table {
  border: 5px solid black
 }
 
-td {
-border: 2px solid black;
+td.clue-value {
+  font-family: helvetica;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.1rem;
 }
 
 td {
+ border: 2px solid black;
  border-radius: 7px;
- letter-spacing: 1px;
+ // letter-spacing: 1px;
  text-shadow:
  -0.40px -0.40px 0 #000,
  0.40px -0.40px 0 #000,
