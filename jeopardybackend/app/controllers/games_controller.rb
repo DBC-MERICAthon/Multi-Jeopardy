@@ -6,8 +6,10 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @single_jeopardy_clue_groups = @game.single_jeopardy_clue_groups.split(",").map { |clue_group_id| ClueGroup.find(clue_group_id) }
-    @double_jeopardy_clue_groups = @game.double_jeopardy_clue_groups.split(",").map { |clue_group_id| ClueGroup.find(clue_group_id) }
+  end
+
+  def admin
+    @game = Game.find(params[:id])
   end
 
   def create

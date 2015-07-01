@@ -1,7 +1,3 @@
-var firebaseClient = new Firebase("https://dbc-jeopardy.firebaseio.com/");
-var gameStateRef = new Firebase("https://dbc-jeopardy.firebaseio.com/games/" + _.last(window.location.pathname.split("/")));
-var connectedPlayersRef = new Firebase("https://dbc-jeopardy.firebaseio.com/games/" + _.last(window.location.pathname.split("/")) + "/connected_players");
-
 // choose-question
 // question-timer
 // waiting-for-buzz
@@ -22,6 +18,9 @@ var getRandomInt = function(min, max) {
 $(function() {
 
 if($("body").hasClass("games-show")) {
+  var firebaseClient = new Firebase("https://dbc-jeopardy.firebaseio.com/");
+  var gameStateRef = new Firebase("https://dbc-jeopardy.firebaseio.com/games/" + _.last(window.location.pathname.split("/")));
+  var connectedPlayersRef = new Firebase("https://dbc-jeopardy.firebaseio.com/games/" + _.last(window.location.pathname.split("/")) + "/connected_players");
 
   // username = ""
 
