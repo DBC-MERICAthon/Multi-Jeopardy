@@ -69,7 +69,6 @@ div.show-question {
   position: relative;
   width: 100%;
   min-height: 100%;
-  background-color: coral;
 }
 
 table {
@@ -118,5 +117,49 @@ td {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+
+  .ui.card {
+   top: 0;
+   word-wrap: break-word;
+   background-color: white;
+   //height: 10% !important;
+   width: 5% !important;
+   postiion: relative;
+   left: 0;
+   border: 2px solid grey;
+   margin-left: 5px;
+   margin-right: 5px;
+   padding: 0px;
+  }
+
+  .player.img {
+   height: 5%;
+  }
+
+  .connected-players{
+   width: 100%;
+  }
+
+  .header.player-username{
+   font-size: 15px !important;
+   width: 100% !important;
+  }
+
+
+  .header.player-score {
+   font-size: 15px !important;
+   color: green !important;
+   width: 100% !important;
+  }
+
+  .image{
+  // height: 80% !important;
+  }
+
+  .content{
+   width: 100% !important;
+   padding: 0px;
+  }
+
 }
 
