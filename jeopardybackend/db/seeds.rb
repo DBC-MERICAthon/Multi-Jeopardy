@@ -1,8 +1,8 @@
 require "open-uri"
 
-5000.times do |i|
+4000.times do |i|
 
-  test_url = "http://www.j-archive.com/showgame.php?game_id=#{i}"
+  test_url = "http://www.j-archive.com/showgame.php?game_id=#{i + 1000}"
 
   doc = Nokogiri::HTML(open(test_url))
 
