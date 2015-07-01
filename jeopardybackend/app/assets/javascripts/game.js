@@ -1,8 +1,3 @@
-// choose-question
-// question-timer
-// waiting-for-buzz
-// waiting-for-confirmation
-
 var avatars = [
   'http://images.clipartpanda.com/pizza-slice-graphic-slice_of_pepperoni_pizza_0515-0901-2114-1926_SMU.jpg',
   'http://img2.wikia.nocookie.net/__cb20100210020028/assassinscreed/images/c/cf/AwesomeSmileySmall.png',
