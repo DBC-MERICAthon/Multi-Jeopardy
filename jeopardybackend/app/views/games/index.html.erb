@@ -1,0 +1,14 @@
+<!-- <h1>Hello from Games Index VIEW</h1>
+ -->
+
+<%= link_to "Create a New Game", games_create_url, method: :post %>
+
+<div class="items">
+
+  <% @games.each do |game| %>
+    <div class="item">
+      <%= link_to "Game: #{game.id}", game_url(game) %>
+    </div>
+  <% end %>
+
+</div>

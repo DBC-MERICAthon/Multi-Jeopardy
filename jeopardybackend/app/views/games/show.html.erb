@@ -1,0 +1,81 @@
+<div class="connected-players ui list">
+</div>
+
+<table class="ui celled striped table">
+
+  <thead>
+    <tr>
+      <% @single_jeopardy_clue_groups.each do |clue_group| %>
+        <th><%= "#{clue_group.category.name} (#{clue_group.year})"%></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+        <% @single_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 200).first.question %></td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @single_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 400).first.question %></td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @single_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 600).first.question %></td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @single_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 800).first.question %></td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @single_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 1000).first.question %></td>
+        <% end %>
+    </tr>
+  </tbody>
+</table>
+
+<table class="ui celled striped table">
+
+  <thead>
+    <tr>
+      <% @double_jeopardy_clue_groups.each do |clue_group| %>
+        <th><%= "#{clue_group.category.name} (#{clue_group.year})"%></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+        <% @double_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 400).first.question %></td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @double_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 800).first.question %></td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @double_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 1200).first.question %></td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @double_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 1600).first.question %></td>
+        <% end %>
+    </tr>
+    <tr>
+        <% @double_jeopardy_clue_groups.each do |clue_group| %>
+          <td><%= clue_group.clues.where(point_value: 2000).first.question %></td>
+        <% end %>
+    </tr>
+  </tbody>
+</table>
+
